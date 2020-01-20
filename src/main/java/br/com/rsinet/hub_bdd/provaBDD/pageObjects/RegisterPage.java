@@ -104,11 +104,11 @@ public class RegisterPage {
 		txtbx_PostalCode.sendKeys(postalCode);
 	}
 
-	public void click_Agree(String agree) {
+	public void click_Agree() {
 		btn_Agree.click();
 	}
 
-	public void click_Register(String register) {
+	public void click_Register() {
 		btn_Conf.click();
 	}
 
@@ -128,4 +128,19 @@ public class RegisterPage {
 
 	}
 
+	public void fill_PersonalDetailsIncorrectly() {
+		enter_UserName("adeborahsoaaaaaauza");
+		enter_Email("adeborahsouza@gmail.com");
+		enter_Senha("68335740Bf");
+		enter_ConfSenha("68335740Bf");
+		enter_Name("Deborah");
+		enter_LastName("Souza");
+		enter_Phone("11984193082");
+		select_Country("Brazil");
+		enter_City("Osasco");
+		enter_Adress("Rua Joaquim Rodrigues, 24");
+		enter_Region("São Paulo");
+		enter_PostalCode("06240-122");
+
+	}
 }

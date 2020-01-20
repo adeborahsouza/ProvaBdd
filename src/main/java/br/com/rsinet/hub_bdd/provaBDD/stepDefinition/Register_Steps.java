@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import br.com.rsinet.hub_bdd.provaBDD.pageObjects.Home_Page;
+import br.com.rsinet.hub_bdd.provaBDD.pageObjects.RegisterPage;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -33,44 +34,28 @@ public class Register_Steps {
 
 	@When("^Fill in the fields correctly$")
 	public void fill_in_the_fields_correctly() {
-
+		RegisterPage register = new RegisterPage(driver);
+		register.fill_PersonalDetails();
 	}
-
 
 	@Then("^Registration is made$")
-	public void registration_is_made() throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
-		throw new PendingException();
-	}
-
-	@Then("^Back to home page$")
-	public void back_to_home_page() throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
-		throw new PendingException();
+	public void registration_is_made() {
+		RegisterPage register = new RegisterPage(driver);
+		register.click_Agree();
+		register.click_Register();
 	}
 
 	@When("^Fill in the fields incorrectly$")
-	public void fill_in_the_fields_incorrectly() throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
-		throw new PendingException();
-	}
-
-	@When("^The fields are not validated$")
-	public void the_fields_are_not_validated() throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
-		throw new PendingException();
+	public void fill_in_the_fields_incorrectly() {
+		RegisterPage register = new RegisterPage(driver);
+		register.fill_PersonalDetailsIncorrectly();
 	}
 
 	@Then("^Registration it's not done$")
-	public void registration_it_s_not_done() throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
-		throw new PendingException();
-	}
-
-	@Then("^continues on the registration page$")
-	public void continues_on_the_registration_page() throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
-		throw new PendingException();
+	public void registration_it_s_not_done() {
+		RegisterPage register = new RegisterPage(driver);
+		register.click_Agree();
+		register.click_Register();
 	}
 
 }
