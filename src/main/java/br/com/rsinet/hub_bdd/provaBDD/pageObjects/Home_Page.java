@@ -1,17 +1,23 @@
 package br.com.rsinet.hub_bdd.provaBDD.pageObjects;
 
-import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
+import br.com.rsinet.hub_bdd.provaBDD.Managers.FileReaderManager;
+import br.com.rsinet.hub_bdd.provaBDD.dataProviders.ConfigFileReader;
+
 public class Home_Page {
-	private static WebDriver driver;
+	WebDriver driver;
+	ConfigFileReader configFileReader;
 
 	public Home_Page(WebDriver driver) {
+		this.driver = driver;
 		PageFactory.initElements(driver, this);
+		configFileReader = new ConfigFileReader();
 	}
 
 	@FindBy(how = How.ID, using = "menuUser")
@@ -25,11 +31,11 @@ public class Home_Page {
 	}
 
 	public void btnRegister() {
-		btn_register.click();
+		btn_register.sendKeys(Keys.ENTER);
 	}
 
 	public void navigateTo_HomePage() {
-		driver.get("http://advantageonlineshopping.com/");
+		driver.get(FileReaderManager.getInstance().getConfigReader().getApplicationUrl());
 	}
 
 }

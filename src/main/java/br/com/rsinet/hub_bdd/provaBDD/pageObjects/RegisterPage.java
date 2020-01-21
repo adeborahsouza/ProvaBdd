@@ -36,7 +36,7 @@ public class RegisterPage {
 	private WebElement txtbx_Phone;
 
 	@FindBy(how = How.NAME, using = "countryListboxRegisterPage")
-	private Select txtbx_Country;
+	private WebElement txtbx_Country;
 
 	@FindBy(how = How.NAME, using = "cityRegisterPage")
 	private WebElement txtbx_City;
@@ -53,7 +53,7 @@ public class RegisterPage {
 	@FindBy(how = How.NAME, using = "i_agree")
 	private WebElement btn_Agree;
 
-	@FindBy(how = How.XPATH, using = "/html/body/login-modal/div/div/div[3]/a[2]")
+	@FindBy(how = How.ID, using = "register_btnundefined")
 	private WebElement btn_Conf;
 
 	public void enter_UserName(String userName) {
@@ -85,7 +85,8 @@ public class RegisterPage {
 	}
 
 	public void select_Country(String country) {
-		txtbx_Country.selectByVisibleText("Brasil");
+		Select selectCountry = new Select(txtbx_Country);
+		selectCountry.selectByVisibleText(country);
 	}
 
 	public void enter_City(String city) {
