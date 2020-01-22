@@ -1,5 +1,6 @@
 package br.com.rsinet.hub_bdd.provaBDD.pageObjects;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,8 +8,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
-import br.com.rsinet.hub_bdd.provaBDD.Managers.FileReaderManager;
 import br.com.rsinet.hub_bdd.provaBDD.dataProviders.ConfigFileReader;
+import br.com.rsinet.hub_bdd.provaBDD.managers.FileReaderManager;
 
 public class Home_Page {
 	WebDriver driver;
@@ -26,6 +27,18 @@ public class Home_Page {
 	@FindBy(how = How.XPATH, using = "/html/body/login-modal/div/div/div[3]/a[2]")
 	private WebElement btn_register;
 
+	@FindBy(how = How.ID, using = "menuSearch")
+	private WebElement btn_search;
+
+	@FindBy(how = How.ID, using = "autoComplete")
+	private WebElement btn_complete;
+
+	@FindBy(how = How.ID, using = "tabletsImg")
+	private WebElement img_prod;
+
+	@FindBy(how = How.XPATH, using = "//*[@id=\"details_10\"]")
+	private WebElement prod_folio;
+
 	public void menuUser() {
 		btn_menuUser.click();
 	}
@@ -36,6 +49,34 @@ public class Home_Page {
 
 	public void navigateTo_HomePage() {
 		driver.get(FileReaderManager.getInstance().getConfigReader().getApplicationUrl());
+	}
+
+	public void clickMenuSearch() {
+		btn_search.click();
+	}
+
+	public void enterComplete(String complete) {
+		btn_complete.sendKeys(complete);
+		btn_complete.sendKeys(Keys.ENTER);
+	}
+
+	public void fill_search() {
+		enterComplete("HP ElitePad 1000 G2 Tablet");
+	}
+
+	public void fill_search_invalido() {
+		enterComplete("Televisão");
+	}
+
+	public void ImagemProduto() {
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		executor.executeScript("arguments[0].click();", img_prod);
+
+	}
+
+	public void ProdutoFolio() {
+		JavascriptExecutor exe = (JavascriptExecutor) driver;
+		exe.executeScript("arguments[0].click();", prod_folio);
 	}
 
 }

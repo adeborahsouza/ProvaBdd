@@ -8,7 +8,11 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import br.com.rsinet.hub_bdd.provaBDD.dataProviders.ConfigFileReader;
+
 public class RegisterPage {
+	WebDriver driver;
+	ConfigFileReader configFileReader;
 
 	public RegisterPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
@@ -114,7 +118,7 @@ public class RegisterPage {
 	}
 
 	public void fill_PersonalDetails() {
-		enter_UserName("adeborahsouza");
+		enter_UserName("celsinhu");
 		enter_Email("adeborahsouza@gmail.com");
 		enter_Senha("68335740Bf");
 		enter_ConfSenha("68335740Bf");

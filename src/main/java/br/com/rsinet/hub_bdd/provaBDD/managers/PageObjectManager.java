@@ -1,8 +1,9 @@
-package br.com.rsinet.hub_bdd.provaBDD.Managers;
+package br.com.rsinet.hub_bdd.provaBDD.managers;
 
 import org.openqa.selenium.WebDriver;
 
 import br.com.rsinet.hub_bdd.provaBDD.pageObjects.Home_Page;
+import br.com.rsinet.hub_bdd.provaBDD.pageObjects.Product_Page;
 import br.com.rsinet.hub_bdd.provaBDD.pageObjects.RegisterPage;
 
 public class PageObjectManager {
@@ -11,6 +12,8 @@ public class PageObjectManager {
 	private Home_Page homePage;
 
 	private RegisterPage registerPage;
+	
+	private Product_Page productPage;
 
 	public PageObjectManager(WebDriver driver) {
 
@@ -27,6 +30,12 @@ public class PageObjectManager {
 	public RegisterPage getRegisterPage() {
 
 		return (registerPage == null) ? registerPage = new RegisterPage(driver) : registerPage;
+
+	}
+	
+	public Product_Page getProductPage() {
+
+		return (productPage == null) ? productPage = new Product_Page(driver) : productPage;
 
 	}
 }

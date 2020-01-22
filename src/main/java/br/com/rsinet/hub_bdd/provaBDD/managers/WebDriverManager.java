@@ -1,4 +1,4 @@
-package br.com.rsinet.hub_bdd.provaBDD.Managers;
+package br.com.rsinet.hub_bdd.provaBDD.managers;
 
 import java.util.concurrent.TimeUnit;
 
@@ -58,8 +58,8 @@ public class WebDriverManager {
 	}
 
 	public void closeDriver() {
-		driver.close();
-		driver.quit();
+//		driver.close();
+
 	}
 
 }

@@ -1,7 +1,7 @@
 package br.com.rsinet.hub_bdd.provaBDD.cucumber;
 
-import br.com.rsinet.hub_bdd.provaBDD.Managers.PageObjectManager;
-import br.com.rsinet.hub_bdd.provaBDD.Managers.WebDriverManager;
+import br.com.rsinet.hub_bdd.provaBDD.managers.PageObjectManager;
+import br.com.rsinet.hub_bdd.provaBDD.managers.WebDriverManager;
 
 public class TestContext {
 	private WebDriverManager webDriverManager;

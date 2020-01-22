@@ -1,4 +1,4 @@
-package br.com.rsinet.hub_bdd.provaBDD.Managers;
+package br.com.rsinet.hub_bdd.provaBDD.managers;
 
 import br.com.rsinet.hub_bdd.provaBDD.dataProviders.ConfigFileReader;
 
