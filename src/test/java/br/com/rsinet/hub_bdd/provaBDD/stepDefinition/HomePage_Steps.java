@@ -1,6 +1,5 @@
 package br.com.rsinet.hub_bdd.provaBDD.stepDefinition;
 
-import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 
 import br.com.rsinet.hub_bdd.provaBDD.cucumber.TestContext;
@@ -10,7 +9,6 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 
 public class HomePage_Steps {
-	private static Logger Log = Logger.getLogger(Logger.class.getName());
 	WebDriver driver;
 	TestContext testContext;
 	Product_Page productPage;
@@ -25,14 +23,12 @@ public class HomePage_Steps {
 	@Given("^User is on Home Page$")
 	public void userIsOnHomePage() {
 		homePage.navigateTo_HomePage();
-		Log.info("Navegando até a pagina inicial");
 	}
 
 	@When("^User navigate  to Register Page$")
 	public void user_navigate_to_Register_Page() {
 		homePage.menuUser();
 		homePage.btnRegister();
-		Log.info("Abrindo a página de registro");
 	}
 
 	@When("^look for a product in the box search$")
@@ -51,11 +47,10 @@ public class HomePage_Steps {
 	public void click_in_product_in_home() {
 		homePage.ImagemProduto();
 	}
-	
+
 	@When("^Click in invalid product in home")
 	public void click_in_invalid_product_in_home() {
 		homePage.ProdutoFolio();
 	}
-	
 
 }
