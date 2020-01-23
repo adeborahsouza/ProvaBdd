@@ -32,9 +32,10 @@ public class HomePage_Steps {
 	}
 
 	@When("^look for a product in the box search$")
-	public void look_for_a_product_in_the_box_search() {
+	public void look_for_a_product_in_the_box_search() throws InterruptedException {
 		homePage.clickMenuSearch();
 		homePage.fill_search();
+		homePage.close_Search();
 	}
 
 	@When("^look for a product nonexistent in the box search$")

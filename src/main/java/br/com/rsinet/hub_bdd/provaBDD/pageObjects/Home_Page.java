@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import br.com.rsinet.hub_bdd.provaBDD.dataProviders.ConfigFileReader;
 import br.com.rsinet.hub_bdd.provaBDD.managers.FileReaderManager;
@@ -38,6 +40,17 @@ public class Home_Page {
 
 	@FindBy(how = How.XPATH, using = "//*[@id=\"details_10\"]")
 	private WebElement prod_folio;
+	
+	@FindBy(how = How.XPATH, using = "//*[@id=\"search\"]/div/div")
+	private WebElement closeSearch;
+
+	public void close_Search() throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.urlContains("search"));
+		JavascriptExecutor ex = (JavascriptExecutor) driver;
+		ex.executeScript("arguments[0].click();", closeSearch);
+	}
+
 
 	public void menuUser() {
 		btn_menuUser.click();

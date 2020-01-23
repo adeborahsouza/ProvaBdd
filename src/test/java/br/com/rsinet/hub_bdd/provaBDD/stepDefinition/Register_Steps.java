@@ -42,6 +42,7 @@ public class Register_Steps {
 	public void registration_it_s_not_done() {
 		registerPage.click_Agree();
 		registerPage.click_Register();
+		registerPage.rolagem();
 	}
 
 }

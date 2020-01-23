@@ -13,7 +13,7 @@ public class Product_Step {
 	TestContext testContext;
 	Product_Page productPage;
 	WebDriverManager manager;
-	
+
 	public Product_Step(TestContext context) {
 		testContext = context;
 		productPage = testContext.getPageObjectManager().getProductPage();
@@ -22,12 +22,12 @@ public class Product_Step {
 	@Then("^Search is done$")
 	public void search_is_done() throws InterruptedException {
 		productPage.enter_produto();
-
+		
+		productPage.btn_cart();
 	}
-	
+
 	@Then("^Search is not done$")
 	public void search_is_not_done() throws InterruptedException {
-		
 
 	}
 

@@ -15,6 +15,7 @@ public class RegisterPage {
 	ConfigFileReader configFileReader;
 
 	public RegisterPage(WebDriver driver) {
+		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
@@ -115,6 +116,11 @@ public class RegisterPage {
 
 	public void click_Register() {
 		btn_Conf.click();
+	}
+
+	public void rolagem() {
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		executor.executeScript("window.scrollBy(0,100)");
 	}
 
 	public void fill_PersonalDetails() {
