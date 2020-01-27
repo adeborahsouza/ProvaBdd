@@ -124,7 +124,7 @@ public class RegisterPage {
 	}
 
 	public void fill_PersonalDetails() {
-		enter_UserName("celsinhu");
+		enter_UserName("celsobonitinhu");
 		enter_Email("adeborahsouza@gmail.com");
 		enter_Senha("68335740Bf");
 		enter_ConfSenha("68335740Bf");

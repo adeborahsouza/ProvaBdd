@@ -21,25 +21,25 @@ public class Register_Steps {
 		registerPage = testContext.getPageObjectManager().getRegisterPage();
 	}
 
-	@And("^Fill in the fields correctly$")
-	public void fill_in_the_fields_correctly() {
+	@And("^preencher os campos corretamente$")
+	public void preencher_os_campos_corretamente () {
 		registerPage.fill_PersonalDetails();
 	}
 
-	@Then("^Registration is done$")
-	public void registration_is_made() {
+	@Then("^registro e feito$")
+	public void registro_e_feito() {
 		registerPage.click_Agree();
 		registerPage.click_Register();
 
 	}
 
-	@When("^Fill in the fields incorrectly$")
-	public void fill_in_the_fields_incorrectly() {
+	@When("^preencher os campos incorretamente$")
+	public void preencher_os_campos_incorretamente() {
 		registerPage.fill_PersonalDetailsIncorrectly();
 	}
 
-	@Then("^Registration it's not done$")
-	public void registration_it_s_not_done() {
+	@Then("^registro nao e feito$")
+	public void registro_nao_e_feito() {
 		registerPage.click_Agree();
 		registerPage.click_Register();
 		registerPage.rolagem();

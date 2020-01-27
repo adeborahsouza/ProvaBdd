@@ -1,11 +1,11 @@
-Feature: Search Box
+Feature: Pesquisa pela lupa
 
-  Scenario: Search
-    Given User is on Home Page
-    When look for a product in the box search
-    Then Search is done
+  Scenario: Pesquisa lupa com sucesso
+    Given Usuario esta na home page
+    When procurar por um produto existente na lupa
+    Then pesquisa e feita
 
-  Scenario: Search failed
-    Given User is on Home Page
-    When look for a product nonexistent in the box search
-    Then Search is not done
+  Scenario: Pesquisa lupa com Falha
+    Given Usuario esta na home page
+    When procurar por um produto inexistente na lupa
+    Then  pesquisa nao e feita

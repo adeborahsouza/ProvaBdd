@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import br.com.rsinet.hub_bdd.provaBDD.cucumber.TestContext;
 import br.com.rsinet.hub_bdd.provaBDD.managers.WebDriverManager;
 import br.com.rsinet.hub_bdd.provaBDD.pageObjects.Product_Page;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 
 public class Product_Step {
@@ -19,16 +20,25 @@ public class Product_Step {
 		productPage = testContext.getPageObjectManager().getProductPage();
 	}
 
-	@Then("^Search is done$")
-	public void search_is_done() throws InterruptedException {
+	@Then("^pesquisa e feita$")
+	public void pesquisa_e_feita() throws InterruptedException {
 		productPage.enter_produto();
-		
+
 		productPage.btn_cart();
 	}
 
-	@Then("^Search is not done$")
-	public void search_is_not_done() throws InterruptedException {
+	@Then("^pesquisa nao e feita$")
+	public void pesquisa_nao_e_feita() throws InterruptedException {
+		productPage.checkNaoEncontrado();
+		productPage.wait_televisao();
 
 	}
+	
+	@And("^clica em um produto$")
+	public void clica_em_um_produto() {
+		productPage.enter_produto();
+		productPage.btn_cart();
+	}
+
 
 }

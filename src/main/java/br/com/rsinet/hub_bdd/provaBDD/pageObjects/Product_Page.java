@@ -1,5 +1,7 @@
 package br.com.rsinet.hub_bdd.provaBDD.pageObjects;
 
+import static org.testng.Assert.assertEquals;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -27,6 +29,12 @@ public class Product_Page {
 	@FindBy(how = How.NAME, using = "save_to_cart")
 	private WebElement btn_cart;
 	
+	@FindBy(how = How.XPATH, using = "//*[@id=\"searchPage\"]/div[3]/div")
+	private WebElement wait_televisao;
+	
+	@FindBy(how = How.XPATH, using = "//*[@id=\"searchPage\"]/div[3]/div/label/span")
+	private WebElement naoEncontrado;
+	
 	public void enter_produto() {
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", btn_produto);
@@ -36,9 +44,13 @@ public class Product_Page {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOf(btn_cart));
 	}
-
-	public void btn_closeSearch() {
+	
+	public void checkNaoEncontrado() {
+		assertEquals(naoEncontrado.getText().contains("No results for"), true);
+	}
+	
+	public void wait_televisao() {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOf(btn_cart));
+		wait.until(ExpectedConditions.visibilityOf(wait_televisao));
 	}
 }

@@ -1,15 +1,15 @@
 #Author: deborah.souza@rsinet.com.br
 #Keywords Summary :
-Feature: Register a new user on the site
+Feature: Registar um novo usuario no site
 
-  Scenario: Successful registration
-    Given User is on Home Page
-    When User navigate  to Register Page
-    And Fill in the fields correctly
-    Then Registration is done
+  Scenario: Registro com sucesso
+    Given Usuario esta na home page 
+    When usuario navegar para a pagina de registro 
+    And preencher os campos corretamente 
+    Then registro e feito 
 
-  Scenario: Registration failed
-    Given User is on Home Page
-    And User navigate  to Register Page
-    When Fill in the fields incorrectly
-    Then Registration it's not done
+  Scenario: Registro com falha
+    Given Usuario esta na home page
+    When  usuario navegar para a pagina de registro 
+    When  preencher os campos incorretamente 
+    Then registro nao e feito 

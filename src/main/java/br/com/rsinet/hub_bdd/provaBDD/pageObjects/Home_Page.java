@@ -43,6 +43,11 @@ public class Home_Page {
 	
 	@FindBy(how = How.XPATH, using = "//*[@id=\"search\"]/div/div")
 	private WebElement closeSearch;
+	
+	@FindBy(how = How.NAME, using = "save_to_cart")
+	private WebElement btn_cart;
+	
+	
 
 	public void close_Search() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -84,12 +89,18 @@ public class Home_Page {
 	public void ImagemProduto() {
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", img_prod);
-
+		
 	}
 
 	public void ProdutoFolio() {
 		JavascriptExecutor exe = (JavascriptExecutor) driver;
 		exe.executeScript("arguments[0].click();", prod_folio);
 	}
+	
+	public void btn_cart() {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOf(btn_cart));
+	}
+	
 
 }

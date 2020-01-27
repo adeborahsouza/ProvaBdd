@@ -20,38 +20,40 @@ public class HomePage_Steps {
 		homePage = testContext.getPageObjectManager().getHome_Page();
 	}
 
-	@Given("^User is on Home Page$")
-	public void userIsOnHomePage() {
+	@Given("^Usuario esta na home page$")
+	public void Usuario_esta_na_home_page() {
 		homePage.navigateTo_HomePage();
 	}
 
-	@When("^User navigate  to Register Page$")
-	public void user_navigate_to_Register_Page() {
+	@When("^usuario navegar para a pagina de registro$")
+	public void usuario_navegar_para_a_pagina_de_registro () {
 		homePage.menuUser();
 		homePage.btnRegister();
 	}
 
-	@When("^look for a product in the box search$")
-	public void look_for_a_product_in_the_box_search() throws InterruptedException {
+	@When("^procurar por um produto existente na lupa$")
+	public void procurar_por_um_produto_existente_na_lupa() throws InterruptedException {
 		homePage.clickMenuSearch();
 		homePage.fill_search();
 		homePage.close_Search();
 	}
 
-	@When("^look for a product nonexistent in the box search$")
-	public void look_for_a_product_nonexistent_in_the_box_search() {
+	@When("^procurar por um produto inexistente na lupa$")
+	public void procurar_por_um_produto_inexistente_na_lupa() {
 		homePage.clickMenuSearch();
 		homePage.fill_search_invalido();
 	}
 
-	@When("^Click in product in home$")
-	public void click_in_product_in_home() {
+	@When("^clica em uma categoria da home$")
+	public void clica_em_uma_categoria_da_home() {
 		homePage.ImagemProduto();
 	}
 
-	@When("^Click in invalid product in home")
-	public void click_in_invalid_product_in_home() {
+	@When("^clica em um produto invalido da home")
+	public void clica_em_um_produto_invalido_da_home() {
 		homePage.ProdutoFolio();
+		homePage.btn_cart();
+		
 	}
 
 }

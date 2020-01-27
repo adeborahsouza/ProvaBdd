@@ -1,11 +1,10 @@
-Feature: Search Home
+Feature: Pesquisa na home page
 
-  Scenario: Search
-    Given User is on Home Page
-    When Click in product in home
-    Then Search is done
+  Scenario: Pesquisa home com sucesso
+   Given Usuario esta na home page
+    When clica em uma categoria da home
+    And clica em um produto
 
-  Scenario: Search failed
-    Given User is on Home Page
-    When Click in invalid product in home
-    Then Search is not done
+  Scenario: Pesquisa home com falha
+    Given Usuario esta na home page
+    When clica em um produto invalido da home
