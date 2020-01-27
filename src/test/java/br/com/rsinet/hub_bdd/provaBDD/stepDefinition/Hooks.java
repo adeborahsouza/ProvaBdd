@@ -43,8 +43,7 @@ public class Hooks {
 		String screenshotName = scenario.getName().replaceAll(" ", "_");
 		File sourcePath = ((TakesScreenshot) testContext.getWebDriverManager().getDriver())
 				.getScreenshotAs(OutputType.FILE);
-		File destinationPath = new File(
-				"C:\\Users\\deborah.souza\\eclipse-workspace\\ProvaBDD\\target\\cucumber-reports\\screenshots\\" + screenshotName + ".png");
+		File destinationPath = new File(System.getProperty("user.dir") + "/target/" + screenshotName + ".png");
 
 		Files.copy(sourcePath, destinationPath);
 
